@@ -1,6 +1,8 @@
-# 毕升文档Api开发样例
+# 毕升文档Api开发示例
 
 Git pull代码后
+
+`npm install`
 
 `npm run build`
 

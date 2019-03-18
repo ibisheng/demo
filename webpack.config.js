@@ -43,6 +43,17 @@ for (let i = 0; i < configs.length; ++i) {
                     },
                     "less-loader"
                 ]
+            },
+            {
+                test: /\.(eot|woff|woff2|svg|ttf|png)([\?]?.*)$/,
+                use: [
+                    {
+                        loader: "file-loader",
+                        options: {
+                            publicPath: "dist/"
+                        }
+                    }
+                ]
             }
         ]
     };
