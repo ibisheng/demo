@@ -1,5 +1,5 @@
 let express = require('express');
-var favicon = require('serve-favicon')
+let favicon = require('serve-favicon')
 let app = express();
 let ejs = require('ejs');
 let path = require('path')
@@ -16,12 +16,20 @@ app.use(favicon(path.join(__dirname, '../favicon.ico')));
 app.use('/dist', express.static(path.join(__dirname, '../dist')));
 
 // set router
-app.get('/', function (req, res) {
-    res.render('index');
-});
+require('./router/drive')(app);
+require('./router/api')(app);
 
-// start server
-let port = 8080;
-app.listen(port, function () {
-    console.log(`in browser access: http://localhost:${port}`);
+// load files
+require('./fileMgr').loadFiles(function(err) {
+    if (err) {
+        console.log(`read files error: ${err}`);
+        console.log(`shutdown server`);
+        return;
+    }
+
+    // start server
+    let port = 8080;
+    app.listen(port, function () {
+        console.log(`in browser access: http://localhost:${port}`);
+    });
 });

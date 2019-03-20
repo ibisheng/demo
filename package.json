@@ -35,9 +35,11 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "crc": "^3.8.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "iview": "^3.3.1",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "whatwg-fetch": "^3.0.0"
   }
 }
