@@ -1,0 +1,4 @@
+{
+    "editorHost": "http://localhost:5500",
+    "editorCaller": "http://localhost:8080"
+}

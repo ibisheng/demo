@@ -59,10 +59,22 @@ export default Vue.extend({
     },
     methods: {
         onPreview(rowData) {
-            console.log(rowData.docId)
+            fetch(`/api/file/view/${rowData.docId}`).then(response => {
+                return response.json()
+            }).then(json => {
+                window.open(json.url);
+            }).catch(fex => {
+                console.error('parsing failed', ex)
+            });
         },
         onEdit(rowData) {
-            console.log(rowData.docId)
+            fetch(`/api/file/edit/${rowData.docId}`).then(response => {
+                return response.json()
+            }).then(json => {
+                window.open(json.url);
+            }).catch(fex => {
+                console.error('parsing failed', ex)
+            });
         }
     },
     mounted() {
@@ -71,7 +83,7 @@ export default Vue.extend({
         }).then(json => {
             this.files = json;
         }).catch(fex => {
-            console.log('parsing failed', ex)
+            console.error('parsing failed', ex)
         });
     }
 })

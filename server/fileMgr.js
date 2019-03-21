@@ -1,4 +1,4 @@
-let path = require('path')
+let path = require('path');
 let fs = require('fs');
 let crc = require('crc');
 
@@ -6,6 +6,10 @@ let FilesMap = {};  // id, file info
 
 function queryFileList() {
     return FilesMap
+}
+
+function queryfile(docId) {
+    return FilesMap[docId];
 }
 
 function loadFiles(callback) {
@@ -25,9 +29,7 @@ function loadFiles(callback) {
                     docId: crc.crc32(filePath).toString(16),
                     title: file,
                     mime_type: '',
-                    thumbnail: '',
                     storage: filePath,
-                    fetchUrl: ''
                 };
 
                 FilesMap[fileInfo.docId] = fileInfo;
@@ -40,5 +42,6 @@ function loadFiles(callback) {
 
 module.exports = {
     queryFileList,
+    queryfile,
     loadFiles
 }

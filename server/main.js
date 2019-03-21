@@ -1,8 +1,16 @@
 let express = require('express');
 let favicon = require('serve-favicon')
-let app = express();
+let bodyParser = require('body-parser');
 let ejs = require('ejs');
 let path = require('path')
+
+// load config file
+require('./config').load();
+
+// create express
+let app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // set html template
 app.engine('.html', ejs.__express);
