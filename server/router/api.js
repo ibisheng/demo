@@ -86,7 +86,8 @@ module.exports = function(app) {
                     let fileInfo = fileMgr.queryfile(docId);
                     if (fileInfo) {
                         console.log(`${fileInfo.title} saved back.`);
-                        console.log(`fetch url: ${docURL}`);
+                        console.log(`fetch url: ${config.getConfig().editorHost}${docURL}`);
+                        res.send({status:true})
                     }
                 }
                 break;
