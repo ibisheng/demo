@@ -33,10 +33,10 @@ apiKey为毕升文档api key，部署完毕升文档之后，可以从控制台�
 
 ```yaml
 apis:
-   postapiurl: http://192.168.2.66:9090/apps/api/saveBack
+   postapiurl: http://192.168.2.66:9090/api/file/saveBack
 ```
 
-![image-20190325222302203](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/image-20190325222302203.png)
+![image-20190325223245235](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/image-20190325223245235.png)
 
 修改毕升文档的配置之后，需要重启毕升文档服务
 
