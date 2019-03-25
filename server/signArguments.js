@@ -1,7 +1,7 @@
 var crypto = require('crypto');
-var apiKey = '45ae1f8b5d50ea9322a3d8e3326ca0f9';
-
+let config = require('./config');
 module.exports = function (arg) {
+    let apiKey = config.getConfig().apiKey;
     var hmac = crypto.createHmac('md5', apiKey);
     data = hmac.update(arg);
     gen_hmac= data.digest('hex');
