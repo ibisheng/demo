@@ -62,5 +62,7 @@ npm run server
 
 然后浏览器打开
 
-http://localhost:9090
+http://editorCaller
+
+假如你是在本地运行demo的，可以直接 http://localhost:9090
 
