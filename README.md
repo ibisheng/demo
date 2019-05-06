@@ -19,7 +19,7 @@ apiKey为毕升文档api key，部署完毕升文档之后，可以从控制台�
     "apiKey":"45ae1f8b5d50ea9322a3d8e3326ca0f9"
 }
 ```
-![image-20190325220838352](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/image-20190325220838352.png)
+![image-20190325220838352](https://bisheng-public.oss-cn-zhangjiakou.aliyuncs.com/resource/image-20190325220838352.png)
 
 #### 修改毕升文档配置
 
@@ -27,7 +27,7 @@ apiKey为毕升文档api key，部署完毕升文档之后，可以从控制台�
 
 毕升文档的配置文件在你安装的毕升文档目录的 workspace/config/config.yml
 
-![image-20190325220009021](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/image-20190325220009021.png)
+![image-20190325220009021](https://bisheng-public.oss-cn-zhangjiakou.aliyuncs.com/resource/image-20190325220009021.png)
 
 编辑config.yml，在配置文件中增加API回调
 
@@ -36,7 +36,7 @@ apis:
    postapiurl: http://192.168.2.66:9090/api/file/saveBack
 ```
 
-![image-20190325223245235](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/image-20190325223245235.png)
+![image-20190325223245235](https://bisheng-public.oss-cn-zhangjiakou.aliyuncs.com/resource/image-20190325223245235.png)
 
 修改毕升文档的配置之后，需要重启毕升文档服务
 
@@ -62,5 +62,7 @@ npm run server
 
 然后浏览器打开
 
-http://localhost:9090
+http://editorCaller
+
+假如你是在本地运行demo的，可以直接 http://localhost:9090
 
