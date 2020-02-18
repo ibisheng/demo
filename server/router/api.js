@@ -47,13 +47,11 @@ module.exports = function(app) {
             doc: {
                 docId: fileInfo.docId,
                 title: fileInfo.title,
-                mime_type: fileInfo.mime_type,
                 fetchUrl: `${config.getConfig().editorCaller}/api/file/${fileInfo.docId}/${userId}`,
                 fromApi:true
             },
             user: {
                 uid: userId,
-                oid: userId,
                 nickName: userId,
                 avatar: '',
                 privilege: [
