@@ -8,6 +8,7 @@ let mimeType = {
     "xlsx": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
     "ppt":  "application/vnd.ms-powerpoint",
     "pptx": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+    "pdf": "application/pdf",
     "js":"application/javascript",
     "go":"text/plain"
 }
