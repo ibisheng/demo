@@ -22,7 +22,7 @@ module.exports = function(app) {
 
     function onGetBishengApi(req, res, suffix) {
         let docId = req.params['docId'];
-        let userId = 'guest';
+        let userId = 'guest'+req.params['uid'];
         let callback = Buffer.from(`${config.getConfig().editorCaller}/api/fileAcl/${docId}/${userId}`).toString('base64');
         let sign = signArg(callback);
         let url = `${config.getConfig().editorHost}/apps/editor/${suffix}?callURL=${callback}&sign=${sign}`;
@@ -31,11 +31,11 @@ module.exports = function(app) {
         });
     }
 
-    app.get('/api/file/view/:docId', function(req, res) {
+    app.get('/api/file/view/:docId/:uid', function(req, res) {
         onGetBishengApi(req, res, 'openPreview');
     });
 
-    app.get('/api/file/edit/:docId', function(req, res) {
+    app.get('/api/file/edit/:docId/:uid', function(req, res) {
         onGetBishengApi(req, res, 'openEditor');
     });
 

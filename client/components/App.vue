@@ -54,7 +54,8 @@ export default Vue.extend({
                     }
                 }
             ],
-            files: []
+            files: [],
+            uid:Date.now(),
         };
     },
     methods: {
@@ -68,7 +69,7 @@ export default Vue.extend({
             });
         },
         onEdit(rowData) {
-            fetch(`/api/file/edit/${rowData.docId}`).then(response => {
+            fetch(`/api/file/edit/${rowData.docId}/${this.uid}`).then(response => {
                 return response.json()
             }).then(json => {
                 window.open(json.url);
@@ -78,6 +79,7 @@ export default Vue.extend({
         }
     },
     mounted() {
+
         fetch('/api/queryFileList').then(response => {
             return response.json()
         }).then(json => {
